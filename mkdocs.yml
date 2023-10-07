@@ -1,0 +1,12 @@
+site_name: PowerBI CLI
+theme:
+  name: readthedocs
+  navigation_depth: 5
+
+markdown_extensions:
+  - mkdocs-click
+  - toc:
+      permalink: "#"
+
+nav:
+  - References: "index.md"
