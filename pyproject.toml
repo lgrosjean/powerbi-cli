@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "powerbi-cli"
+version = "0.1.0"
+description = "PowerBI CLI using REST APIs"
+authors = ["Léo Grosjean <leo.bigjin@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+pbi = "powerbi_cli.app:app"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.31.0"
+structlog = "^23.1.0"
+typer = {extras = ["all"], version = "^0.9.0"}
+azure-identity = "^1.14.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
