@@ -15,3 +15,5 @@ jobs:
       - run: cp docs/README.md README.md # Necessary for poetry
       - run: poetry install --without dev
       - run: poetry run mkdocs gh-deploy --force
+        env:
+          OFFLINE: True
