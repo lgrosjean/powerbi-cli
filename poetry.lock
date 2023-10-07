@@ -473,17 +473,6 @@ click = ">=8.1"
 markdown = ">=3.3"
 
 [[package]]
-name = "mkdocs-gitbook"
-version = "0.0.1"
-description = "Default theme for GitBook for Mkdocs"
-optional = false
-python-versions = "*"
-files = [
-    {file = "mkdocs-gitbook-0.0.1.tar.gz", hash = "sha256:c094f9d77e47d54379a0d3816097b56511e760fedb23dcf89bc925f6ac4e75f3"},
-    {file = "mkdocs_gitbook-0.0.1-py2.py3-none-any.whl", hash = "sha256:e929c3caf655076eaa030128cfd104687b9ec14644d54f4a175d43e13ac60ef8"},
-]
-
-[[package]]
 name = "msal"
 version = "1.24.1"
 description = "The Microsoft Authentication Library (MSAL) for Python library"
@@ -919,4 +908,4 @@ watchmedo = ["PyYAML (>=3.10)"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<4.0"
-content-hash = "048e9f4ca533152e78f590b68897661a27ba01993adfb644e30e7d80c9cf38e1"
+content-hash = "da6176ceed834acd36c952127eef1eacfef760590812bfb10c8df3e63905772d"
