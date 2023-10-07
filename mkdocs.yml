@@ -1,12 +1,11 @@
 site_name: PowerBI CLI
-theme:
-  name: readthedocs
-  navigation_depth: 5
+theme: readthedocs
+repo_url: https://github.com/lgrosjean/powerbi-cli
+repo_name: GitHub
+edit_uri: edit/main/docs/
 
 markdown_extensions:
   - mkdocs-click
   - toc:
       permalink: "#"
-
-nav:
-  - References: "index.md"
+      separator: "_"
