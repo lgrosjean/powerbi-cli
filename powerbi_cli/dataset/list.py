@@ -1,13 +1,14 @@
 import click
 from tabulate import tabulate
 
-from powerbi_cli.client import pbi
+from powerbi_cli.client import get_client
 
 
 @click.command()
 @click.option("-w", "--workspace", type=str, default=None, show_default=True)
 def list_(workspace: str):
     """List Dataset in given workspace"""
+    pbi = get_client()
     datasets = pbi.datasets(group=workspace)
     table = [
         [dataset.id, dataset.name, dataset.configured_by, dataset.created_date]  # type: ignore

@@ -2,7 +2,7 @@ from pathlib import Path
 
 import click
 
-from powerbi_cli.client import pbi
+from powerbi_cli.client import get_client
 
 
 @click.command()
@@ -11,6 +11,7 @@ from powerbi_cli.client import pbi
 @click.argument("report")
 def export(workspace: str, output: Path, report: str):
     """Download the report as `.pbix` or `.rdl` depending on the report"""
+    pbi = get_client()
     report_ = pbi.report(report=report, group=workspace)
 
     save_to, file_name = None, None
