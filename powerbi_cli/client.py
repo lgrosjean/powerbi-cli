@@ -1,4 +1,5 @@
 import os
+from functools import cache
 
 from azure.identity import DefaultAzureCredential
 from pbipy import PowerBI
@@ -14,9 +15,7 @@ def get_token() -> str:
     return token
 
 
-OFFLINE = os.getenv("OFFLINE", "False")
-
-if OFFLINE != "True":
-    _TOKEN = get_token()
-
-    pbi: PowerBI = PowerBI(_TOKEN)
+@cache
+def get_client():
+    token = get_token()
+    return PowerBI(token)

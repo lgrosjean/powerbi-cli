@@ -1,13 +1,14 @@
 import click
 from tabulate import tabulate
 
-from powerbi_cli.client import pbi
+from powerbi_cli.client import get_client
 
 
 @click.command(name="list")
 @click.argument("workspace", type=str, default=None)
 def list_(workspace: str):
     """List Reports in given workspace"""
+    pbi = get_client()
     reports = pbi.reports(group=workspace)
     click.echo(reports)
     table = [
