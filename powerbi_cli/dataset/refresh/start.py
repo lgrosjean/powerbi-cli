@@ -1,29 +1,12 @@
-import typing as t
-from enum import Enum
-
-import typer
-
-from powerbi_cli.client import client
+import click
 
 
-class DatasetRefreshType(str, Enum):
-    Automatic = "Automatic"
-    Calculate = "Calculate"
-    Full = "Full"
-
-
-class NotifyOption(str, Enum):
-    always = "always"
-    failure = "failure"
-    none = "none"
-
-
-# TODO: use workspace id or workspace name
+@click.command()
 def start(
-    dataset: t.Annotated[str, typer.Argument()],
-    workspace: t.Annotated[t.Optional[str], typer.Option("-w", "--workspace")] = None,
-    type: DatasetRefreshType = DatasetRefreshType.Full,
-    notify: NotifyOption = NotifyOption.always,
+    dataset,
+    workspace,
+    type,
+    notify,
 ):
     """Triggers a refresh for the specified dataset from the specified workspace."""
     endpoint = f"/datasets/{dataset}/refreshes"
@@ -41,5 +24,5 @@ def start(
     body = {"notifyOption": notify_option}
 
     # res = client.post(endpoint)
-    typer.echo(body)
+    # typer.echo(body)
     # typer.echo(res.json())
