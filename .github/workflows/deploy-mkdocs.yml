@@ -16,8 +16,6 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install poetry
-      - run: cp README.md docs/README.md # Necessary for poetry
+      - run: cp README.md docs/README.md
       - run: poetry install --without dev
-      - run: echo $OFFLINE && poetry run mkdocs gh-deploy --force
-        env:
-          OFFLINE: "True"
+      - run: poetry run mkdocs gh-deploy --force
