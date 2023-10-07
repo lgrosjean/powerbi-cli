@@ -1,14 +1,17 @@
-import typing as t
+import click
+from tabulate import tabulate
 
-import typer
-
-from powerbi_cli.client import client
+from powerbi_cli.client import pbi
 
 
-# TODO: use workspace id or workspace name
-def list(workspace: t.Annotated[str, typer.Option("-w", "--workspace")]):
-    endpoint = "datasets"
-    if workspace:
-        endpoint = f"groups/{workspace}/datasets"
-    res = client.get(endpoint)
-    typer.echo(res.json()["value"])
+@click.command()
+@click.option("-w", "--workspace", type=str, default=None, show_default=True)
+def list_(workspace: str):
+    """List Dataset in given workspace"""
+    datasets = pbi.datasets(group=workspace)
+    table = [
+        [dataset.id, dataset.name, dataset.configured_by, dataset.created_date]  # type: ignore
+        for dataset in datasets
+    ]
+    headers = ["DATASET ID", "NAME", "CONFIGURED BY", "CREATED DATE"]
+    click.echo(tabulate(table, headers, tablefmt="simple"))
