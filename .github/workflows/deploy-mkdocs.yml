@@ -11,9 +11,10 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
+          cache: "pip"
       - run: pip install poetry
       - run: cp docs/README.md README.md # Necessary for poetry
       - run: poetry install --without dev
-      - run: poetry run mkdocs gh-deploy --force
+      - run: echo $OFFLINE && poetry run mkdocs gh-deploy --force
         env:
-          OFFLINE: True
+          OFFLINE: "True"
