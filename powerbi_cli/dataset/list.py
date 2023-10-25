@@ -4,7 +4,7 @@ from tabulate import tabulate
 from powerbi_cli.client import get_client
 
 
-@click.command()
+@click.command(name="list")
 @click.option("-w", "--workspace", type=str, default=None, show_default=True)
 def list_(workspace: str):
     """List Dataset in given workspace"""
