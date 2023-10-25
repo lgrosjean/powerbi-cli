@@ -1,4 +1,4 @@
-# CLI Reference
+# CLI Reference 
 
 ::: mkdocs-click
     :module: powerbi_cli.main

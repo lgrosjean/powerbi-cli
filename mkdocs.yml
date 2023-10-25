@@ -1,5 +1,9 @@
 site_name: PowerBI CLI
-theme: readthedocs
+theme:
+  name: readthedocs
+  include_homepage_in_sidebar: False
+  titles_only: False
+
 repo_url: https://github.com/lgrosjean/powerbi-cli
 repo_name: GitHub
 edit_uri: edit/main/docs/
@@ -8,4 +12,4 @@ markdown_extensions:
   - mkdocs-click
   - toc:
       permalink: "#"
-      separator: "_"
+      separator: "-"
