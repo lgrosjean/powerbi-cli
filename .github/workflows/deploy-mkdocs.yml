@@ -16,6 +16,5 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install poetry
-      - run: cp README.md docs/README.md
       - run: poetry install --without dev
       - run: poetry run mkdocs gh-deploy --force
