@@ -19,9 +19,6 @@ jobs:
         poetry install --with test
     - name: Build coverage file
       run: |
-        poetry run --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=powerbi_cli tests/ | tee pytest-coverage.txt
-    - name: Pytest coverage comment
-      uses: MishaKav/pytest-coverage-comment@main
-      with:
-        pytest-coverage-path: ./pytest-coverage.txt
-        junitxml-path: ./pytest.xml
+        poetry run pytest --cov=powerbi_cli tests/ > pytest-coverage.txt
+    - name: Comment coverage
+      uses: coroo/pytest-coverage-commentator@v1.0.2
