@@ -17,3 +17,7 @@ pbi.add_command(workspace)
 pbi.add_command(auth)
 pbi.add_command(report)
 pbi.add_command(admin)
+
+
+if __name__ == "__main__":
+    pbi()

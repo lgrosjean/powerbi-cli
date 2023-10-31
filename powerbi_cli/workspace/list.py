@@ -4,7 +4,7 @@ from tabulate import tabulate
 from powerbi_cli.client import get_client
 
 
-@click.command()
+@click.command(name="list")
 @click.option("--top", type=int, default=None, show_default=True)
 def list_(top: int):
     """List workspaces available"""
