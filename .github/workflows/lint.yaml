@@ -1,12 +1,7 @@
 name: Lint
 
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    types:
-      - ready_for_review
+on: [push, pull_request]
+
 
 jobs:
   black:
