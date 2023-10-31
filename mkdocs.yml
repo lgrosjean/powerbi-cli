@@ -1,15 +1,37 @@
 site_name: PowerBI CLI
-theme:
-  name: readthedocs
-  include_homepage_in_sidebar: False
-  titles_only: False
+site_url: https://lgrosjean.github.io/powerbi-cli/
+site_author: Léo Grosjean
 
+# Repository
+repo_name: lgrosjean/powerbi-cli
 repo_url: https://github.com/lgrosjean/powerbi-cli
-repo_name: GitHub
+
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+  logo: static/icon.png
+  favicon: static/icon.png
+  palette:
+    primary: grey
+    accent: amber
+  font:
+    text: Open Sans
+  features:
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - navigation.sections
+    - navigation.tabs
+    - toc.follow
+    - search.suggest
+
 edit_uri: edit/main/docs/
 
 markdown_extensions:
   - mkdocs-click
+  - admonition
   - toc:
       permalink: "#"
       separator: "-"
