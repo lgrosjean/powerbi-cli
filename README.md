@@ -1,11 +1,40 @@
-# PowerBI CLI
+![PyPI - Version](https://img.shields.io/pypi/v/powerbi-cli?logo=pypi&color=blue&link=https%3A%2F%2Fpypi.org%2Fproject%2Fpowerbi-cli%2F)
+![test](https://ghcr-badge.egpl.dev/lgrosjean/powerbi-cli/latest_tag?color=%2344cc11&ignore=latest&label=docker&trim=-)
 
-The Power BI command-line interface (Power BI CLI) is a set of commands used to create and manage Power BI resources (e.g. reports, users and capacity). The CLI is designed to get you working quickly with Power BI, with an emphasis on automation.
+# PowerBI CLI application
+
+
+This applicaton is basically a Click wrapper around the [`pbipy`](https://github.com/andrewvillazon/pbipy) Python package, following the NodeJS CLI application [`powerbi-cli`](https://github.com/powerbi-cli/powerbi-cli) convention and documentation.
+
+Its main feature is the Docker image available in parallel which can be used for various task like:
+- Frequently export PowerBI Report `pbix` from PowerBI Service for historization
+- Frequently test PowerBI Dataset through a list of DAX query to monitor dataset performance through time
+
+## Installation
+
+### Using pip 
+
+```bash
+pip install powerbi-cli
+```
+
+### Using Docker
+
+```bash
+docker pull ghcr.io/lgrosjean/powerbi-cli:latest
+```
+
+## Usage
+
+Please refer to the [sample documentation](./docs/samples/) for list of usages.
+
+
+---
 
 ## References
 
-- https://github.com/andrewvillazon/pbipy
-- https://learn.microsoft.com/en-us/rest/api/power-bi/
-- https://typer.tiangolo.com/
-- https://powerbi-cli.github.io/index.html
-- https://github.com/powerbi-cli/powerbi-cli
+
+- [`pbipy`](https://github.com/andrewvillazon/pbipy)
+- [PowerBI REST API](https://learn.microsoft.com/en-us/rest/api/power-bi/)
+- NodeJS `powerbi-cli` [source code](https://powerbi-cli.github.io/index.html)
+- NodeJS `powerbi-cli` [documentation](https://github.com/powerbi-cli/powerbi-cli)
