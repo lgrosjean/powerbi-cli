@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "powerbi-cli"
-version = "0.1.0"
+version = "0.2.0"
 description = "PowerBI CLI using REST APIs"
 authors = ["Léo Grosjean <leo.bigjin@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.scripts]
-pbi = "powerbi_cli.main:pbi"
+powerbi = "powerbi_cli.main:powerbi"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
