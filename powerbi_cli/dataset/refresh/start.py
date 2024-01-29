@@ -8,6 +8,8 @@ from powerbi_cli.client import get_client
 @click.option(
     "--notify",
     type=click.Choice(["MailOnCompletion", "MailOnFailure", "NoNotification"]),
+    default="NoNotification",
+    show_default=True,
 )
 @click.option(
     "--type",
@@ -15,6 +17,8 @@ from powerbi_cli.client import get_client
     type=click.Choice(
         ["Automatic", "Calculate", "ClearValues", "DataOnly", "Defragment", "Full"]
     ),
+    default=None,
+    show_default=True,
 )
 @click.argument("dataset")
 def start(
@@ -25,6 +29,8 @@ def start(
 ):
     """Triggers a refresh for the specified dataset from the specified workspace."""
     pbi = get_client()
+
+    click.echo(f"{type_}, {notify}")
 
     endpoint = f"/datasets/{dataset}/refreshes"
     if workspace:
