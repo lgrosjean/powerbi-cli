@@ -12,10 +12,10 @@ Its main feature is the Docker image available in parallel which can be used for
 
 ## Installation
 
-### Using pip 
+### Using pipx
 
 ```bash
-pip install powerbi-cli
+pipx install powerbi-cli
 ```
 
 ### Using Docker
